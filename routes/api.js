@@ -13,9 +13,15 @@ router.use(cors());
 router.use(bodyParser.json());
 
 
+// TODO - cambia tipo id su database in serial (perche sia sequenziale)
+// TODO - modifica chiamate api con aggiunta controllers
+
 router.get('/buses', (req, res) => {
   client.connect();
-  client.query(`SELECT id, capacity, name FROM public.buses`, (err, result) => {
+  client.query(`SELECT b.id, b.capacity, b.name, d.people, d.open, p.lat, p.lon
+	FROM public.buses b
+	join public.doors d ON (b.id = d.bus_id)
+	left join public.position p ON (b.id = p.bus_id)`, (err, result) => {
     if (err) {
       res.status(500).json({
         err: err
@@ -25,12 +31,6 @@ router.get('/buses', (req, res) => {
   });
 });
 
-
-
-/* GET api listing. */
-router.get('/', (req, res) => {
-  res.send('api works');
-});
 
 
 
