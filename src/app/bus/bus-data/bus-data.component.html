@@ -1,26 +1,16 @@
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<mat-accordion multi="true" *ngIf="buses.length > 0" class="panel">
+  <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" class="panel" *ngFor="let bus of buses">
 
-  <ng-container matColumnDef="id">
-    <th mat-header-cell *matHeaderCellDef> ID </th>
-    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-  </ng-container>
+    <mat-expansion-panel-header>
+      <img src="https://img.icons8.com/cotton/64/000000/trolleybus.png">
+      <h3>{{bus.id}}</h3>
+    </mat-expansion-panel-header>
 
-  <ng-container matColumnDef="latitude">
-    <th mat-header-cell *matHeaderCellDef> Latitude </th>
-    <td mat-cell *matCellDef="let element"> {{element.latitude}} </td>
-  </ng-container>
+    <h3>Name</h3>
+    <p>{{bus.name}}</p>
 
-  <ng-container matColumnDef="longitude">
-    <th mat-header-cell *matHeaderCellDef> Longitude </th>
-    <td mat-cell *matCellDef="let element"> {{element.longitude}} </td>
-  </ng-container>
+    <h3>Capacity</h3>
+    <p>{{bus.capacity}}</p>
 
-  <ng-container matColumnDef="people">
-    <th mat-header-cell *matHeaderCellDef> People </th>
-    <td mat-cell *matCellDef="let element"> {{element.people}} </td>
-  </ng-container>
-
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;">
-  </tr>
-</table>
+  </mat-expansion-panel>
+</mat-accordion>
