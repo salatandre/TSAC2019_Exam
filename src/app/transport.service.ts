@@ -7,8 +7,14 @@ import { map } from "rxjs/operators";
 })
 export class TransportService {
   constructor(private http: HttpClient) {}
+  baseUrl = "http://localhost:3000";
 
-  getAllBuses() {
-    return this.http.get("/api/buses").pipe(map((response: any) => response));
+  async getAllBuses() {
+    return await fetch(this.baseUrl + "/api/buses", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    }).then(res => res.json());
   }
 }

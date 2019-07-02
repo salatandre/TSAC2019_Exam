@@ -13,3 +13,8 @@ img {
 .info-text {
   text-align: center
 }
+
+.doorStatus {
+  width: 20px;
+  height: 20px;
+}

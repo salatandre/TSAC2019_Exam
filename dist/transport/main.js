@@ -135,6 +135,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material_expansion__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material/expansion */ "./node_modules/@angular/material/esm5/expansion.es5.js");
 /* harmony import */ var _transport_service__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./transport.service */ "./src/app/transport.service.ts");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _angular_material_grid_list__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/material/grid-list */ "./node_modules/@angular/material/esm5/grid-list.es5.js");
+
 
 
 
@@ -176,7 +178,8 @@ var AppModule = /** @class */ (function () {
                 _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_7__["BrowserAnimationsModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_14__["HttpClientModule"],
-                _angular_router__WEBPACK_IMPORTED_MODULE_9__["RouterModule"].forRoot(ROUTES)
+                _angular_router__WEBPACK_IMPORTED_MODULE_9__["RouterModule"].forRoot(ROUTES),
+                _angular_material_grid_list__WEBPACK_IMPORTED_MODULE_15__["MatGridListModule"]
             ],
             providers: [_transport_service__WEBPACK_IMPORTED_MODULE_13__["TransportService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
@@ -196,7 +199,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".panel {\r\n  width: 90%;\r\n  margin: auto;\r\n  margin-bottom: 20px;\r\n}\r\n\r\nimg {\r\n  width: 50px;\r\n  height: 50px;\r\n}\r\n\r\n.info-text {\r\n  text-align: center\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYnVzL2J1cy1kYXRhL2J1cy1kYXRhLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxXQUFXO0VBQ1gsYUFBYTtFQUNiLG9CQUFvQjtDQUNyQjs7QUFFRDtFQUNFLFlBQVk7RUFDWixhQUFhO0NBQ2Q7O0FBR0Q7RUFDRSxrQkFBa0I7Q0FDbkIiLCJmaWxlIjoic3JjL2FwcC9idXMvYnVzLWRhdGEvYnVzLWRhdGEuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5wYW5lbCB7XHJcbiAgd2lkdGg6IDkwJTtcclxuICBtYXJnaW46IGF1dG87XHJcbiAgbWFyZ2luLWJvdHRvbTogMjBweDtcclxufVxyXG5cclxuaW1nIHtcclxuICB3aWR0aDogNTBweDtcclxuICBoZWlnaHQ6IDUwcHg7XHJcbn1cclxuXHJcblxyXG4uaW5mby10ZXh0IHtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXJcclxufVxyXG4iXX0= */"
+module.exports = ".panel {\r\n  width: 90%;\r\n  margin: auto;\r\n  margin-bottom: 20px;\r\n}\r\n\r\nimg {\r\n  width: 50px;\r\n  height: 50px;\r\n}\r\n\r\n.info-text {\r\n  text-align: center\r\n}\r\n\r\n.doorStatus {\r\n  width: 20px;\r\n  height: 20px;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYnVzL2J1cy1kYXRhL2J1cy1kYXRhLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxXQUFXO0VBQ1gsYUFBYTtFQUNiLG9CQUFvQjtDQUNyQjs7QUFFRDtFQUNFLFlBQVk7RUFDWixhQUFhO0NBQ2Q7O0FBR0Q7RUFDRSxrQkFBa0I7Q0FDbkI7O0FBRUQ7RUFDRSxZQUFZO0VBQ1osYUFBYTtDQUNkIiwiZmlsZSI6InNyYy9hcHAvYnVzL2J1cy1kYXRhL2J1cy1kYXRhLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIucGFuZWwge1xyXG4gIHdpZHRoOiA5MCU7XHJcbiAgbWFyZ2luOiBhdXRvO1xyXG4gIG1hcmdpbi1ib3R0b206IDIwcHg7XHJcbn1cclxuXHJcbmltZyB7XHJcbiAgd2lkdGg6IDUwcHg7XHJcbiAgaGVpZ2h0OiA1MHB4O1xyXG59XHJcblxyXG5cclxuLmluZm8tdGV4dCB7XHJcbiAgdGV4dC1hbGlnbjogY2VudGVyXHJcbn1cclxuXHJcbi5kb29yU3RhdHVzIHtcclxuICB3aWR0aDogMjBweDtcclxuICBoZWlnaHQ6IDIwcHg7XHJcbn1cclxuIl19 */"
 
 /***/ }),
 
@@ -207,7 +210,7 @@ module.exports = ".panel {\r\n  width: 90%;\r\n  margin: auto;\r\n  margin-botto
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-accordion multi=\"true\" *ngIf=\"buses.length > 0\" class=\"panel\">\r\n  <mat-expansion-panel [expanded]=\"step === 0\" (opened)=\"setStep(0)\" class=\"panel\" *ngFor=\"let bus of buses\">\r\n\r\n    <mat-expansion-panel-header>\r\n      <img src=\"https://img.icons8.com/cotton/64/000000/trolleybus.png\">\r\n      <h3>{{bus.id}}</h3>\r\n    </mat-expansion-panel-header>\r\n\r\n    <h3>Name</h3>\r\n    <p>{{bus.name}}</p>\r\n\r\n    <h3>People</h3>\r\n    <p>{{bus.people}}/{{bus.capacity}}</p>\r\n\r\n\r\n    <h3>Doors open</h3>\r\n    <p>{{bus.open}}</p>\r\n\r\n    <h3>Latitude</h3>\r\n    <p>{{bus.lat}}</p>\r\n\r\n    <h3>Longitude</h3>\r\n    <p>{{bus.lon}}</p>\r\n\r\n\r\n  </mat-expansion-panel>\r\n</mat-accordion>\r\n"
+module.exports = "<mat-accordion multi=\"true\" *ngIf=\"buses.length > 0\" class=\"panel\">\r\n  <mat-expansion-panel [expanded]=\"step === 0\" (opened)=\"setStep(0)\" class=\"panel\" *ngFor=\"let bus of buses\">\r\n\r\n    <mat-expansion-panel-header>\r\n      <img src=\"../../../assets/img/trolleybus.png\">\r\n      <h3>{{bus.id}}</h3>\r\n    </mat-expansion-panel-header>\r\n\r\n    <h3>Name</h3>\r\n    <p>{{bus.name}}</p>\r\n\r\n    <h3>People</h3>\r\n    <p>{{bus.people}}/{{bus.capacity}}</p>\r\n\r\n\r\n    <h3>Doors open</h3>\r\n    <div *ngIf=\"bus.open === false\"><img class=\"doorStatus\" src=\"../../../assets/img/red.png\"></div>\r\n    <div *ngIf=\"bus.open === true\"><img class=\"doorStatus\" src=\"../../../assets/img/green.png\"></div>\r\n\r\n    <h3>Latitude</h3>\r\n    <p>{{bus.lat}}</p>\r\n\r\n    <h3>Longitude</h3>\r\n    <p>{{bus.lon}}</p>\r\n\r\n\r\n  </mat-expansion-panel>\r\n</mat-accordion>\r\n"
 
 /***/ }),
 
@@ -224,15 +227,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _transport_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../transport.service */ "./src/app/transport.service.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 
 
 
+
+/* export interface BusData {
+  id: number;
+  name: string;
+  capacity: number;
+} */
 var BusDataComponent = /** @class */ (function () {
-    function BusDataComponent(transporService) {
+    function BusDataComponent(transporService, http) {
         this.transporService = transporService;
+        this.http = http;
         this.buses = [];
         this.step = 0;
     }
+    BusDataComponent.prototype.getAllBuses = function () {
+        return this.http.get("http://localhost:3000/buses");
+    };
     BusDataComponent.prototype.setStep = function (index) {
         this.step = index;
     };
@@ -244,7 +258,7 @@ var BusDataComponent = /** @class */ (function () {
     };
     BusDataComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.transporService.getAllBuses().subscribe(function (buses) {
+        this.transporService.getAllBuses().then(function (buses) {
             _this.buses = buses;
         });
     };
@@ -254,7 +268,8 @@ var BusDataComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./bus-data.component.html */ "./src/app/bus/bus-data/bus-data.component.html"),
             styles: [__webpack_require__(/*! ./bus-data.component.css */ "./src/app/bus/bus-data/bus-data.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_transport_service__WEBPACK_IMPORTED_MODULE_2__["TransportService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_transport_service__WEBPACK_IMPORTED_MODULE_2__["TransportService"],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"]])
     ], BusDataComponent);
     return BusDataComponent;
 }());
@@ -317,17 +332,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
-
 
 
 
 var TransportService = /** @class */ (function () {
     function TransportService(http) {
         this.http = http;
+        this.baseUrl = "http://localhost:3000";
     }
     TransportService.prototype.getAllBuses = function () {
-        return this.http.get("/api/buses").pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (response) { return response; }));
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, fetch(this.baseUrl + "/api/buses", {
+                            method: "GET",
+                            headers: {
+                                "Content-Type": "application/json"
+                            }
+                        }).then(function (res) { return res.json(); })];
+                    case 1: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
     };
     TransportService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({

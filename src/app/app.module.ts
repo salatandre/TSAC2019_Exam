@@ -12,6 +12,7 @@ import { HeaderComponent } from "./header/header.component";
 import { MatExpansionModule } from "@angular/material/expansion";
 import { TransportService } from "./transport.service";
 import { HttpClientModule } from "@angular/common/http";
+import { MatGridListModule } from "@angular/material/grid-list";
 
 const ROUTES = [
   {
@@ -36,7 +37,8 @@ const ROUTES = [
     FormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    RouterModule.forRoot(ROUTES)
+    RouterModule.forRoot(ROUTES),
+    MatGridListModule
   ],
   providers: [TransportService],
   bootstrap: [AppComponent]

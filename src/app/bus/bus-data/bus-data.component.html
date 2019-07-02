@@ -2,7 +2,7 @@
   <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" class="panel" *ngFor="let bus of buses">
 
     <mat-expansion-panel-header>
-      <img src="https://img.icons8.com/cotton/64/000000/trolleybus.png">
+      <img src="../../../assets/img/trolleybus.png">
       <h3>{{bus.id}}</h3>
     </mat-expansion-panel-header>
 
@@ -14,7 +14,8 @@
 
 
     <h3>Doors open</h3>
-    <p>{{bus.open}}</p>
+    <div *ngIf="bus.open === false"><img class="doorStatus" src="../../../assets/img/red.png"></div>
+    <div *ngIf="bus.open === true"><img class="doorStatus" src="../../../assets/img/green.png"></div>
 
     <h3>Latitude</h3>
     <p>{{bus.lat}}</p>

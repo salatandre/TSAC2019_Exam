@@ -1,11 +1,12 @@
 import { Component, OnInit } from "@angular/core";
 import { TransportService } from "../../transport.service";
+import { HttpClient } from "@angular/common/http";
 
-export interface BusData {
+/* export interface BusData {
   id: number;
   name: string;
   capacity: number;
-}
+} */
 
 @Component({
   selector: "app-bus-data",
@@ -15,7 +16,14 @@ export interface BusData {
 export class BusDataComponent implements OnInit {
   buses: any = [];
 
-  constructor(private transporService: TransportService) {}
+  getAllBuses() {
+    return this.http.get("http://localhost:3000/buses");
+  }
+
+  constructor(
+    private transporService: TransportService,
+    private http: HttpClient
+  ) {}
 
   step = 0;
   setStep(index: number) {
@@ -31,7 +39,7 @@ export class BusDataComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.transporService.getAllBuses().subscribe(buses => {
+    this.transporService.getAllBuses().then(buses => {
       this.buses = buses;
     });
   }
