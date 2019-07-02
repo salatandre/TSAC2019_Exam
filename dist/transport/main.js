@@ -210,7 +210,7 @@ module.exports = ".panel {\r\n  width: 90%;\r\n  margin: auto;\r\n  margin-botto
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-accordion multi=\"true\" *ngIf=\"buses.length > 0\" class=\"panel\">\r\n  <mat-expansion-panel [expanded]=\"step === 0\" (opened)=\"setStep(0)\" class=\"panel\" *ngFor=\"let bus of buses\">\r\n\r\n    <mat-expansion-panel-header>\r\n      <img src=\"../../../assets/img/trolleybus.png\">\r\n      <h3>{{bus.id}}</h3>\r\n    </mat-expansion-panel-header>\r\n\r\n    <h3>Name</h3>\r\n    <p>{{bus.name}}</p>\r\n\r\n    <h3>People</h3>\r\n    <p>{{bus.people}}/{{bus.capacity}}</p>\r\n\r\n\r\n    <h3>Doors open</h3>\r\n    <div *ngIf=\"bus.open === false\"><img class=\"doorStatus\" src=\"../../../assets/img/red.png\"></div>\r\n    <div *ngIf=\"bus.open === true\"><img class=\"doorStatus\" src=\"../../../assets/img/green.png\"></div>\r\n\r\n    <h3>Latitude</h3>\r\n    <p>{{bus.lat}}</p>\r\n\r\n    <h3>Longitude</h3>\r\n    <p>{{bus.lon}}</p>\r\n\r\n\r\n  </mat-expansion-panel>\r\n</mat-accordion>\r\n"
+module.exports = "<mat-accordion multi=\"true\" *ngIf=\"buses.length > 0\" class=\"panel\">\r\n  <mat-expansion-panel [expanded]=\"step === 0\" (opened)=\"setStep(0)\" class=\"panel\" *ngFor=\"let bus of buses\">\r\n\r\n    <mat-expansion-panel-header>\r\n      <img src=\"../../../assets/img/trolleybus.png\">\r\n      <h3>{{bus.id}}</h3>\r\n    </mat-expansion-panel-header>\r\n\r\n    <h3>Name</h3>\r\n    <p>{{bus.name}}</p>\r\n\r\n  </mat-expansion-panel>\r\n</mat-accordion>\r\n"
 
 /***/ }),
 

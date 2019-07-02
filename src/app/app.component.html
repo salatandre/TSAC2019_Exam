@@ -1,4 +1,6 @@
 <app-header></app-header>
 <main>
-  <app-bus-data></app-bus-data>
+  <div *ngFor="let data of bus" style="margin: 10px">
+    <app-bus-data [data]="data"></app-bus-data>
+  </div>
 </main>

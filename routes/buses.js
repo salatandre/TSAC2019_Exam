@@ -1,19 +1,11 @@
-const express = require('express');
-const router = express.Router();
-const config = require('../config');
-const pg = require('pg');
-const cors = require('cors');
-const bodyParser = require('body-parser');
+const router = require('express').Router();
 const db = require('../db/index')
 
-const connectionString = "postgres://" + config.db.user + ":" + config.db.password + "@" + config.db.dynamicIp + ":" + config.db.port + "/" + config.db.database;
+/* const connectionString = "postgres://" + config.db.user + ":" + config.db.password + "@" + config.db.dynamicIp + ":" + config.db.port + "/" + config.db.database;
 
 const client = new pg.Client(connectionString);
 router.use(cors());
 router.use(bodyParser.json());
-
-
-// TODO - modifica chiamate api con aggiunta controllers
 
 /* router.get('/buses', (req, res) => {
   bus_id = req.body.bus_id
@@ -33,10 +25,22 @@ inner join (select * from public.position
   });
 }); */
 
-router.get('/buses', function (req, res) {
+router.get('/', function (req, res) {
   db.getAllBuses(function (err, rows) {
     if (err) res.send(err);
     res.send(rows)
   })
 })
+
+router.get("/:id", function (req, res) {
+  const id = req.params.id;
+  db.getSingleBus(id, function (err, rows) {
+    if (err) res.send(err);
+    res.send(rows);
+  });
+
+
+});
+
+
 module.exports = router;

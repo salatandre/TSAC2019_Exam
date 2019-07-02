@@ -1,27 +1,27 @@
-<mat-accordion multi="true" *ngIf="buses.length > 0" class="panel">
-  <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" class="panel" *ngFor="let bus of buses">
+<mat-accordion multi="true" class="panel">
+  <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" class="panel">
 
     <mat-expansion-panel-header>
       <img src="../../../assets/img/trolleybus.png">
-      <h3>{{bus.id}}</h3>
+      <h3>{{data?.id}}</h3>
     </mat-expansion-panel-header>
 
     <h3>Name</h3>
-    <p>{{bus.name}}</p>
+    <p>{{data?.name}}</p>
 
     <h3>People</h3>
-    <p>{{bus.people}}/{{bus.capacity}}</p>
+    <p>{{bus?.people}}/{{data?.capacity}}</p>
 
 
     <h3>Doors open</h3>
-    <div *ngIf="bus.open === false"><img class="doorStatus" src="../../../assets/img/red.png"></div>
-    <div *ngIf="bus.open === true"><img class="doorStatus" src="../../../assets/img/green.png"></div>
+    <div *ngIf="bus?.open === false"><img class="doorStatus" src="../../../assets/img/red.png"></div>
+    <div *ngIf="bus?.open === true"><img class="doorStatus" src="../../../assets/img/green.png"></div>
 
     <h3>Latitude</h3>
-    <p>{{bus.lat}}</p>
+    <p>{{pos?.lat}}</p>
 
     <h3>Longitude</h3>
-    <p>{{bus.lon}}</p>
+    <p>{{pos?.lon}}</p>
 
 
   </mat-expansion-panel>

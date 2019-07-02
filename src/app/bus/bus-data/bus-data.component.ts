@@ -1,12 +1,5 @@
-import { Component, OnInit } from "@angular/core";
-import { TransportService } from "../../transport.service";
+import { Component, OnInit, Input } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-
-/* export interface BusData {
-  id: number;
-  name: string;
-  capacity: number;
-} */
 
 @Component({
   selector: "app-bus-data",
@@ -14,16 +7,22 @@ import { HttpClient } from "@angular/common/http";
   templateUrl: "./bus-data.component.html"
 })
 export class BusDataComponent implements OnInit {
-  buses: any = [];
+  bus;
+  pos;
+  @Input() data: any;
+  constructor(private http: HttpClient) {}
 
-  getAllBuses() {
-    return this.http.get("http://localhost:3000/buses");
+  getLastPosition() {
+    return this.http.get(
+      "http://localhost:3000/positions/" + this.data["id"] + "/last"
+    );
   }
 
-  constructor(
-    private transporService: TransportService,
-    private http: HttpClient
-  ) {}
+  getLastBusDoors() {
+    return this.http.get(
+      "http://localhost:3000/doors/" + this.data["id"] + "/last"
+    );
+  }
 
   step = 0;
   setStep(index: number) {
@@ -39,8 +38,20 @@ export class BusDataComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.transporService.getAllBuses().then(buses => {
-      this.buses = buses;
+    this.getLastPosition().subscribe(res => {
+      this.pos = res[0];
     });
+    this.getLastBusDoors().subscribe(res => {
+      this.bus = res[0];
+    });
+
+    setInterval(() => {
+      this.getLastPosition().subscribe(res => {
+        this.pos = res[0];
+      });
+      this.getLastBusDoors().subscribe(res => {
+        this.bus = res[0];
+      });
+    }, 10000);
   }
 }
