@@ -42,7 +42,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.get("/", function (req, res) {
-  res.send("welcome to home")
+  res.send("Home")
 });
 
 
@@ -50,6 +50,7 @@ app.get("/", function (req, res) {
 app.use('/buses', require('./routes/buses'));
 app.use('/positions', require('./routes/positions'));
 app.use('/doors', require('./routes/doors'))
+app.use('/data', require('./queue/sender'));
 
 
 

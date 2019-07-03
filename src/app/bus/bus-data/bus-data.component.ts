@@ -9,6 +9,7 @@ import { HttpClient } from "@angular/common/http";
 export class BusDataComponent implements OnInit {
   bus;
   pos;
+  door;
   @Input() data: any;
   constructor(private http: HttpClient) {}
 

@@ -7,14 +7,19 @@ module.exports = {
 
     db.query('INSERT INTO public."position" (bus_id, time, lat, lon) values($1,$2,$3,$4)',
       [
-        data["bus_id", data["time"], data["lat"], data["lon"]]
+        data["bus_id"], data["time"], data["lat"], data["lon"]
       ],
       (error) => {
         if (error) throw error;
-
       });
 
-
+    db.query('INSERT INTO public.doors (bus_id, open, people, time) values ($1,$2,$3,$4)',
+      [
+        data["bus_id"], data["open"], data["people"], data["time"]
+      ],
+      (error) => {
+        if (error) throw error;
+      })
   },
 
   getAllBuses(callback) {
@@ -24,7 +29,7 @@ module.exports = {
   },
 
   getSingleBus(bus_id, callback) {
-    timescale.query('SELECT * FROM public.buses WHERE id= $1;', [bus_id])
+    db.query('SELECT * FROM public.buses WHERE id= $1;', [bus_id])
       .then(result => callback(null, result.rows))
       .catch(err => callback(err, null))
   },

@@ -2,7 +2,7 @@ var amqp = require('amqplib/callback_api');
 var queries = require('../db/index');
 const config = require('../config')
 
-amqp.connect('amqp://' + config.queue.user + ':' + config.queue.password + '@' + config.host.url + ':' + config.queue.port + '/', function (error0, connection) {
+amqp.connect('amqp://' + config.queue.user + ':' + config.queue.password + '@' + config.db.dynamicIp + ':' + config.queue.port + '/', function (error0, connection) {
   if (error0) {
     throw error0;
   }
@@ -10,7 +10,7 @@ amqp.connect('amqp://' + config.queue.user + ':' + config.queue.password + '@' +
     if (error1) {
       throw error1;
     }
-    var queue = 'test';
+    var queue = 'queue';
 
 
     channel.assertQueue(queue, {
@@ -27,11 +27,11 @@ amqp.connect('amqp://' + config.queue.user + ':' + config.queue.password + '@' +
     });
 
     console.log(" [*] Waiting for messages in %s. To exit press CTRL+C", queue);
-    /*channel.consume(queue, function(msg) {
+    channel.consume(queue, function (msg) {
       console.log(" [x] Received %s", msg.content.toString());
     }, {
-        noAck: true
-      });*/
+      noAck: true
+    });
   });
 
 });

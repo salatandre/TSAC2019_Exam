@@ -1,5 +1,5 @@
 var amqp = require('amqplib/callback_api');
-const cfg = require('../config');
+const config = require('../config');
 const router = require('express').Router();
 
 router.post('/position', function (req, res) {
@@ -8,14 +8,16 @@ router.post('/position', function (req, res) {
   var bus_id = req.body.bus_id
   var time = req.body.time;
   var lat = req.body.lat;
-  var lon = req.body.long;
+  var lon = req.body.lon;
+  var open = req.body.open;
+  var people = req.body.people;
 
 
-  amqp.connect('amqp://' + config.queue.user + ':' + config.queue.password + '@' + config.host.url + ':' + config.queue.port + '/', function (error0, connection) {
+  amqp.connect('amqp://' + config.queue.user + ':' + config.queue.password + '@' + config.db.dynamicIp + ':' + config.queue.port + '/', function (error0, connection) {
     if (error0) {
       throw error0;
-
     }
+    console.log(error0, connection)
     connection.createChannel(function (error1, channel) {
       if (error1) {
         throw error1;
@@ -27,7 +29,10 @@ router.post('/position', function (req, res) {
         "bus_id": bus_id,
         "time": time,
         "lat": lat,
-        "lon": lon
+        "lon": lon,
+        "people": people,
+        "open": open
+
       }
 
       channel.assertQueue(queue, {
