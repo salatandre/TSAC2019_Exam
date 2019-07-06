@@ -63,7 +63,7 @@ module.exports = {
       .catch(err => callback(err, null))
   },
   getLastBusDoors(bus_id, callback) {
-    db.query('SELECT * FROM public.doors WHERE bus_id = $1 order by time desc limit 1;', [bus_id])
+    db.query('SELECT * FROM public.doors WHERE bus_id = $1 order by "time" desc limit 1;', [bus_id])
       .then(result => callback(null, result.rows))
       .catch(err => callback(err, null))
   }

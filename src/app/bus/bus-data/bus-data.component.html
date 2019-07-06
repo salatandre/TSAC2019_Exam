@@ -10,12 +10,12 @@
     <p>{{data?.name}}</p>
 
     <h3>People</h3>
-    <p>{{bus?.people}}/{{data?.capacity}}</p>
+    <p>{{door?.people}}/{{data?.capacity}}</p>
 
 
     <h3>Doors open</h3>
-    <div *ngIf="bus?.open === false"><img class="doorStatus" src="../../../assets/img/red.png"></div>
-    <div *ngIf="bus?.open === true"><img class="doorStatus" src="../../../assets/img/green.png"></div>
+    <div *ngIf="door?.open === false"><img class="doorStatus" src="../../../assets/img/red.png"></div>
+    <div *ngIf="door?.open === true"><img class="doorStatus" src="../../../assets/img/green.png"></div>
 
     <h3>Latitude</h3>
     <p>{{pos?.lat}}</p>

@@ -7,7 +7,6 @@ import { HttpClient } from "@angular/common/http";
   templateUrl: "./bus-data.component.html"
 })
 export class BusDataComponent implements OnInit {
-  bus;
   pos;
   door;
   @Input() data: any;
@@ -19,7 +18,7 @@ export class BusDataComponent implements OnInit {
     );
   }
 
-  getLastBusDoors() {
+  getLastDoors() {
     return this.http.get(
       "http://localhost:3000/doors/" + this.data["id"] + "/last"
     );
@@ -42,16 +41,16 @@ export class BusDataComponent implements OnInit {
     this.getLastPosition().subscribe(res => {
       this.pos = res[0];
     });
-    this.getLastBusDoors().subscribe(res => {
-      this.bus = res[0];
+    this.getLastDoors().subscribe(res => {
+      this.door = res[0];
     });
 
     setInterval(() => {
       this.getLastPosition().subscribe(res => {
         this.pos = res[0];
       });
-      this.getLastBusDoors().subscribe(res => {
-        this.bus = res[0];
+      this.getLastDoors().subscribe(res => {
+        this.door = res[0];
       });
     }, 10000);
   }
