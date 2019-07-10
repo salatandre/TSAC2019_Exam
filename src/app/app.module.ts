@@ -13,9 +13,10 @@ import { MatExpansionModule } from "@angular/material/expansion";
 import { TransportService } from "./transport.service";
 import { HttpClientModule, HttpClient } from "@angular/common/http";
 import { MatGridListModule } from "@angular/material/grid-list";
+import { MapComponent } from "./map/map.component";
 
 @NgModule({
-  declarations: [AppComponent, BusDataComponent, HeaderComponent],
+  declarations: [AppComponent, BusDataComponent, HeaderComponent, MapComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
