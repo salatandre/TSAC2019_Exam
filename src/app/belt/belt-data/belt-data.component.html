@@ -7,13 +7,28 @@
     </mat-expansion-panel-header>
 
 
-    <h3>Power</h3>
-    <p *ngIf="power.consume<60">{{power?.consume}} WATT </p>
-    <p style="background-color: red;color:white" *ngIf="power.consume>60">{{power?.consume}} WATT</p>
+    <div *ngIf="power.consume<60">
+      <h3>Power</h3>
+      <p>{{power?.consume}} WATT </p>
+    </div>
+
+    <div *ngIf="power.consume>60" style="background-color: orangered">
+      <h3 style=" color:white">Power</h3>
+      <p style="color:white">{{power?.consume}} WATT</p>
+    </div>
 
 
-    <h3>Rate</h3>
-    <p *ngIf="rate.vel<60">{{ rate?.vel }} mt/min</p>
-    <p style="background-color: yellow; color:blue" *ngIf="rate.vel>60">{{ rate?.vel }} mt/min</p>
+    <div *ngIf="rate.vel<60">
+      <h3>Rate</h3>
+      <p>{{ rate?.vel }} mt/min </p>
+    </div>
+
+
+    <div *ngIf="rate.vel>60" style="background-color: yellow">
+      <h3 style=" color:blue">Rate</h3>
+      <p style="color:blue">{{ rate?.vel }} mt/min</p>
+    </div>
+
+
   </mat-expansion-panel>
 </mat-accordion>

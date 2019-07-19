@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+import config from "../../../config";
 
 @Component({
   selector: "app-belt-data",
@@ -14,13 +15,13 @@ export class BeltDataComponent implements OnInit {
 
   getLastPower() {
     return this.http.get(
-      "http://localhost:3000/power/" + this.data["id"] + "/last"
+      config.host.url + "/power/" + this.data["id"] + "/last"
     );
   }
 
   getLastRates() {
     return this.http.get(
-      "http://localhost:3000/rates/" + this.data["id"] + "/last"
+      config.host.url + "/rates/" + this.data["id"] + "/last"
     );
   }
 

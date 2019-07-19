@@ -14,7 +14,7 @@ export class AppComponent {
   constructor(private http: HttpClient) {}
 
   getAllBelts() {
-    return this.http.get("http://localhost:3000/belts");
+    return this.http.get(config.host.url + "/belts");
   }
 
   ngOnInit() {
