@@ -2,68 +2,68 @@ const db = require('./db')
 
 module.exports = {
 
-  insertPosition(data) {
+  insertData(data) {
 
 
-    db.query('INSERT INTO public."position" (bus_id, time, lat, lon) values($1,$2,$3,$4)',
+    db.query('INSERT INTO public.power (belt_id, consume, time) values($1,$2,$3)',
       [
-        data["bus_id"], data["time"], data["lat"], data["lon"]
+        data["belt_id"], data["consume"], data["time"]
       ],
       (error) => {
         if (error) throw error;
       });
 
-    db.query('INSERT INTO public.doors (bus_id, open, people, time) values ($1,$2,$3,$4)',
+    db.query('INSERT INTO public.rate (belt_id, vel, time) values ($1,$2,$3)',
       [
-        data["bus_id"], data["open"], data["people"], data["time"]
+        data["belt_id"], data["vel"], data["time"]
       ],
       (error) => {
         if (error) throw error;
       })
   },
 
-  getAllBuses(callback) {
-    db.query('SELECT * FROM public.buses')
+  getAllBelts(callback) {
+    db.query('SELECT * FROM public.belt')
       .then(res => callback(null, res.rows))
       .catch(err => callback(err, null))
   },
 
-  getSingleBus(bus_id, callback) {
-    db.query('SELECT * FROM public.buses WHERE id= $1;', [bus_id])
+  getSingleBelt(belt_id, callback) {
+    db.query('SELECT * FROM public.belt WHERE id= $1;', [belt_id])
       .then(result => callback(null, result.rows))
       .catch(err => callback(err, null))
   },
 
 
-  getLastBusPosition(bus_id, callback) {
-    db.query('SELECT * FROM public."position" WHERE bus_id = $1 order by time desc limit 1;', [bus_id])
+  getLastBeltPower(belt_id, callback) {
+    db.query('SELECT * FROM public.power WHERE belt_id = $1 order by time desc limit 1;', [belt_id])
       .then(result => callback(null, result.rows))
       .catch(err => callback(err, null))
   },
 
-  getPositions(callback) {
-    db.query('SELECT * FROM public."position";')
+  getPowers(callback) {
+    db.query('SELECT * FROM public.power;')
       .then(result => callback(null, result.rows))
       .catch(err => callback(err, null))
   },
-  getBusPosition(bus_id, callback) {
-    db.query('SELECT * FROM public."position" WHERE bus_id = $1;', [bus_id])
+  getBeltPower(belt_id, callback) {
+    db.query('SELECT * FROM public.power WHERE belt_id = $1;', [belt_id])
       .then(result => callback(null, result.rows))
       .catch(err => callback(err, null))
   },
 
-  getDoors(callback) {
-    db.query('SELECT * FROM public.doors;')
+  getRates(callback) {
+    db.query('SELECT * FROM public.rate;')
       .then(result => callback(null, result.rows))
       .catch(err => callback(err, null))
   },
-  getBusDoors(bus_id, callback) {
-    db.query('SELECT * FROM public.doors WHERE bus_id= $1;', [bus_id])
+  getBeltRates(belt_id, callback) {
+    db.query('SELECT * FROM public.rate WHERE belt_id= $1;', [belt_id])
       .then(result => callback(null, result.rows))
       .catch(err => callback(err, null))
   },
-  getLastBusDoors(bus_id, callback) {
-    db.query('SELECT * FROM public.doors WHERE bus_id = $1 order by "time" desc limit 1;', [bus_id])
+  getLastBeltRates(belt_id, callback) {
+    db.query('SELECT * FROM public.rate WHERE belt_id = $1 order by "time" desc limit 1;', [belt_id])
       .then(result => callback(null, result.rows))
       .catch(err => callback(err, null))
   }

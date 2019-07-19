@@ -20,7 +20,7 @@ amqp.connect('amqp://' + config.queue.user + ':' + config.queue.password + '@' +
     channel.consume(queue, function (data) {
       let d = JSON.parse(data.content.toString());
       console.log("Data : " + d);
-      queries.insertPosition(d);
+      queries.insertData(d);
 
     }, {
       noAck: true

@@ -1,7 +1,10 @@
 <app-header></app-header>
-<app-map-component></app-map-component>
 <main>
-  <div *ngFor="let data of bus" style="margin: 10px">
-    <app-bus-data [data]="data"></app-bus-data>
-  </div>
+  <mat-grid-list cols="3" rowHeight="2:1">
+    <mat-grid-tile *ngFor=" let data of belt">
+      <div>
+        <app-belt-data [data]="data"></app-belt-data>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
 </main>

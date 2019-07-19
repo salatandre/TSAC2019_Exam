@@ -2,15 +2,13 @@ var amqp = require('amqplib/callback_api');
 const config = require('../config');
 const router = require('express').Router();
 
-router.post('/position', function (req, res) {
+router.post('/power', function (req, res) {
 
   console.log(req.body);
-  var bus_id = req.body.bus_id
+  var belt_id = req.body.belt_id
   var time = req.body.time;
-  var lat = req.body.lat;
-  var lon = req.body.lon;
-  var open = req.body.open;
-  var people = req.body.people;
+  var consume = req.body.consume;
+  var vel = req.body.vel;
 
 
   amqp.connect('amqp://' + config.queue.user + ':' + config.queue.password + '@' + config.db.dynamicIp + ':' + config.queue.port + '/', function (error0, connection) {
@@ -26,12 +24,10 @@ router.post('/position', function (req, res) {
 
       var queue = 'queue';
       var msg = {
-        "bus_id": bus_id,
+        "belt_id": belt_id,
         "time": time,
-        "lat": lat,
-        "lon": lon,
-        "people": people,
-        "open": open
+        "consume": consume,
+        "vel": vel
 
       }
 

@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+import config from "../../config";
 
 @Component({
   selector: "app-root",
@@ -7,18 +8,18 @@ import { HttpClient } from "@angular/common/http";
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
-  title = "Transport";
+  title = "Belt";
 
-  bus;
+  belt;
   constructor(private http: HttpClient) {}
 
-  getAllBuses() {
-    return this.http.get("http://localhost:3000/buses");
+  getAllBelts() {
+    return this.http.get("http://localhost:3000/belts");
   }
 
   ngOnInit() {
-    this.getAllBuses().subscribe(res => {
-      this.bus = res;
+    this.getAllBelts().subscribe(res => {
+      this.belt = res;
     });
   }
 }

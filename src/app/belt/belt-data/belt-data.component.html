@@ -1,0 +1,19 @@
+<mat-accordion multi="true" class="panel">
+  <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" class="panel">
+    <mat-expansion-panel-header>
+      <img src="../../../assets/img/belt.svg" />
+
+      <h3> BELT N. {{ data?.id }}</h3>
+    </mat-expansion-panel-header>
+
+
+    <h3>Power</h3>
+    <p *ngIf="power.consume<60">{{power?.consume}} WATT </p>
+    <p style="background-color: red;color:white" *ngIf="power.consume>60">{{power?.consume}} WATT</p>
+
+
+    <h3>Rate</h3>
+    <p *ngIf="rate.vel<60">{{ rate?.vel }} mt/min</p>
+    <p style="background-color: yellow; color:blue" *ngIf="rate.vel>60">{{ rate?.vel }} mt/min</p>
+  </mat-expansion-panel>
+</mat-accordion>
